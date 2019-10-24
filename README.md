@@ -37,5 +37,8 @@ There are some thumbnails that are required. You should create them under your o
 | `thumb_timeline.jpg` | 500x300         | Posts timeline   |
 | `thumb_master.jpg`   | 1920x960        | Post main image  |
 
+## Changing Jekyll Project
+If you're looking for changing jekyll theme or any file of the project, you should [take a look here](https://github.com/usetrio/trio-engineering-blog).
+
 ## License
 You may not reuse anything therein without Trio's permission.
