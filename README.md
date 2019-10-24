@@ -1,7 +1,7 @@
 # Posts of Trio Engineering Blog
 This repository contains all posts content of [Trio Engineering Blog](https://github.com/usetrio/trio-engineering-blog).
 
-## Contribute
+## Contributing
 1. Fork the `master` branch
 2. Create your own post file
 3. Create thumbnails for social networks in the `uploads` folder
