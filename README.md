@@ -1,4 +1,4 @@
-# Posts of Trio Engineering Blog
+# Posts of Trio Engineering Blog [![CircleCI](https://circleci.com/gh/usetrio/trio-engineering-blog-posts.svg?style=svg)](https://circleci.com/gh/usetrio/trio-engineering-blog-posts)
 This repository contains all posts content of [Trio Engineering Blog](https://github.com/usetrio/trio-engineering-blog).
 
 ## Contributing
