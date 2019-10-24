@@ -4,12 +4,10 @@ jobs:
     docker:
       - image: circleci/ruby:2.4.3-node-browsers
     steps:
+      - checkout
       - run:
           name: Trigger Blog Deploy
-          command: |
-            curl -u ${CIRCLE_API_TOKEN_FOR_TRIGGERING_BLOG_DEPLOY}: \
-              -d "build_parameters[CIRCLE_JOB]=update_posts" \
-              https://circleci.com/api/v1.1/project/github/usetrio/trio-engineering-blog/tree/master
+          command: .circleci/trigger-blog-deploy.sh
 workflows:
   version: 2
   build:
