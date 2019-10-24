@@ -6,6 +6,8 @@ This repository contains all posts content of [Trio Engineering Blog](https://gi
 2. Create your own post file
 3. Create thumbnails for social networks in the `uploads` folder
 4. Create a Pull Request
+5. Wait for your PR be reviewed
+6. When you PR get merged, it'll automatically trigger the [deploy workflow](https://github.com/usetrio/trio-engineering-blog-posts/blob/master/.circleci/config.yml#L3-L10)
 
 ## Post File Sample
 You should create your own post file with this name format: `YYYY-MM-DD-dasherized-title.md` (e.g. `2019-10-08-post-sample-title-goes-here.md`). Make sure to also follow this content format:
