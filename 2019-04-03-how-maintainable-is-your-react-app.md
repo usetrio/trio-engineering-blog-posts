@@ -29,14 +29,14 @@ I’ve designed a sample application for teaching purposes that is available to 
 
 ### Modules
 
-#### :pushpin: App Module
+#### 📌 App Module
 - Components
 - Routers
 
-#### :pushpin: API Module
+#### 📌 API Module
 - Redux Actions
 
-#### :pushpin: Members Module
+#### 📌 Members Module
 - Components
 - Containers
 - Navigation Menu Item
@@ -45,7 +45,7 @@ I’ve designed a sample application for teaching purposes that is available to 
 - Redux Selectors
 - Routers
 
-#### :pushpin: About Module
+#### 📌 About Module
 - Components
 - Navigation Menu Item
 - Routers
@@ -250,7 +250,7 @@ import { buildRequestAction } from 'modules/api/actions';
 #### Components structure
 Usually, we’ll have multiple files related to the same component *(e.g. styles, tests, etc)* and to better organize, that I like to group them into the same folder. Instead of creating a file `components/MembersList.js`, I create a file `components/MembersList/index.js` which makes it easier to put all related files together.
 
-#### Extra :arrow_right: Test files
+#### Extra → Test files
 I really like the approach of having a test file alongside the implementation file. Instead of having two files across different folders like:
 
 ```
@@ -276,4 +276,4 @@ I believe that by implementing a modular approach you will have a well-defined p
 ## Do you wanna know more how do we do this in Trio?
 In Trio, we help small and mid-sized companies by providing them with software engineering teams on demand. Eliminating the process of selection and hiring, we allocate to you the teams of highly-qualified software engineering teams that match perfectly your company’s needs. Managing a remote team doesn’t have to be hard. Do you want to know more about working with Trio?
 
-Tell us about your project :arrow_right: [https://trio.dev](https://trio.dev)
+Tell us about your project → [https://trio.dev](https://trio.dev)
