@@ -105,7 +105,7 @@ I’ve designed a sample application for teaching purposes that is available to 
 
 Essentially, we have a similar folder structure and files as with the modules. The goal here is to have isolation throughout the modules while still following the [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) approach; that’s why we have `reducer` files for each module that use this feature, for example. To better understand their modularity, let’s dive deeper into some files and folders. Since each module exports similar files we’re able to get all the modules routes at once by doing something like this:
 
-```es6
+```js
 import { getModulesMetavalues } from 'moduleReader';
 
 getModulesMetavalues('routes');
@@ -113,7 +113,7 @@ getModulesMetavalues('routes');
 
 The logic behind the `getModulesMetavalues` is actually pretty simple, it just iterates a specific key from all of the registered modules:
 
-```es6
+```js
 import * as modules from 'modules';
 
 export const getModulesMetadata = (key) =>
@@ -132,7 +132,7 @@ export const getModulesMetavalues = (key) =>
 ```
 So essentially, our main module file (e.g. *src/modules/members/index.js*) must export the routes and other features like this:
 
-```es6
+```js
 import * as components from './components';
 import * as containers from './containers';
 import * as actions from './actions';
@@ -152,7 +152,7 @@ Each file has its own responsibility and utility. Let’s take a look:
 #### router.js
 The router file is supposed to export a simple [Route](https://reacttraining.com/react-router/web/api/Route) component from the [React Router library](https://reacttraining.com/react-router/). This way, you can get them to use as `children` inside the Switch component:
 
-```es6
+```js
 // src/modules/app/containers/App/index.js
 
 import mapProps from 'map-props';
@@ -164,7 +164,7 @@ export default mapProps({
 })(App);
 ```
 
-```es6
+```js
 // src/modules/app/components/App/index.js
 
 render() {
@@ -177,14 +177,14 @@ render() {
 #### menus.js
 The menu file is intended to help you with creating dynamic menu links. All you need to do is to return a simple React component containing your link:
 
-```es6
+```js
 // src/modules/members/menu.js
 import { MembersMenu } from './components';
 
 export default MembersMenu;
 ```
 
-```es6
+```js
 // src/modules/app/containers/Navigation/index.js
 
 import mapProps from 'map-props';
@@ -199,7 +199,7 @@ export default mapProps({
 #### reducer.js
 The reducer file is supposed to return only a single reducer. If you have to have more than a single tree-leaf, use the `combineReducers` function.
 
-```es6
+```js
 import { combineReducers } from 'redux-immutable';
 import { buildRequestReducer } from 'modules/api/reducer';
 
@@ -211,7 +211,7 @@ export default combineReducers({ list });
 #### selectors.js
 The selectors file is supposed to have getters from the redux state tree. Try to follow the [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) approach by composing and reusing other selectors with [reselect](https://github.com/reduxjs/reselect) library.
 
-```es6
+```js
 // src/modules/members/selectors.js
 import { createSelector } from 'reselect';
 
@@ -223,7 +223,7 @@ export const getMembersList = createSelector(getMembers, state => state.list);
 #### actions.js
 The actions file is supposed to have both sync and async actions with a descriptive name of what they’re expected to do. Try also to follow the [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) approach by reusing other modules actions whenever you can:
 
-```es6
+```js
 // src/modules/members/actions.js
 
 import { buildRequestAction } from 'modules/api/actions';
@@ -243,7 +243,7 @@ Usually modules have some dependency on other modules and to achieve that we hav
 #### Files imports
 Consider using [absolute paths](https://itnext.io/configure-absolute-paths-with-create-react-app-and-flow-e4b8922676a2) like this if you’re trying to import a file inside or outside of your module. It makes moving files across modules easier:
 
-```es6
+```js
 import { buildRequestAction } from 'modules/api/actions';
 ```
 
