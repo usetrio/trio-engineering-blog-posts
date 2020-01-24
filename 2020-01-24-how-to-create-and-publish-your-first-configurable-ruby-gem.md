@@ -174,4 +174,4 @@ I hope this brief post helps you to release your contribution to the world :)
 
 Feel free to ask me if you have any questions.
 
-*Originally published in [https://trio.dev/blog/how-to-create-and-publish-your-first-configurable-ruby-gem-37189](https://trio.dev/blog/how-to-create-and-publish-your-first-configurable-ruby-gem-37189)*
+*Originally published in [https://trio.dev/blog/how-to-create-and-publish-your-first-configurable-ruby-gem-91060](https://trio.dev/blog/how-to-create-and-publish-your-first-configurable-ruby-gem-91060)*
