@@ -133,6 +133,9 @@ Congratulations! You just created your first configurable Ruby Gem. For now, you
 can't install it using [rubygems.org](https://rubygems.org), but you can install
 it using the GitHub repository. Just add this line to your project's *Gemfile*.
 
+```
+gem 'trio-blog-api', '~0.1', github: 'usetrio/trio-blog-api'
+```
 
 ### Step 5: Publishing it to rubygems.org
 
