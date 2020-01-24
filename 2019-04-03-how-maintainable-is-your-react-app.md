@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How maintanable is your React App?"
-thumbnail: /uploads/2019-4-how-maintainable-is-your-react-app/poster-750.jpg
+thumbnail: /uploads/2019-4-how-maintainable-is-your-react-app/thumb_timeline.jpg
 upload_directory: /uploads/2019-4-how-maintainable-is-your-react-app
 author: dhyego
 ---
