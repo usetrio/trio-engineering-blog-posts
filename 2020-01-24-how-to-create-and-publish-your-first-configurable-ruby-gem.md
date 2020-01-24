@@ -38,7 +38,7 @@ with a name that hasn’t been taken. Be sure to check the official public gems
 registry: [rubygems.org](https://rubygems.org/) to see if your name has already
 been taken.
 
-For this tutorial, I’m gonna create a little ruby gem called *trio-blog-api*
+For this tutorial, I’m going to create a little ruby gem called *trio-blog-api*
 which aims to fetch [Trio’s website](https://trio.dev/) and give us the last
 blog post informations.
 
@@ -58,53 +58,52 @@ bundler gem your-gem-name
 ```
 
 If this is your first time running this command you’ll be prompted to choose
-some preferences about the framework test and license. If you’re not sure about
+some preferences like the license that you want to use. If you’re not sure about
 those choices you can read more about the [basic of
 testing](https://thoughtbot.com/blog/back-to-basics-writing-unit-tests-first)
 and [how to properly choose your Ruby Gem’s
 license](https://choosealicense.com/).
 
-I’ll be using *[rspec](https://rspec.info/)* and *[
-MIT](https://choosealicense.com/licenses/mit/)* as my test framework and
-license choices respectively.
+I’ll be using *[
+MIT](https://choosealicense.com/licenses/mit/)* as my license choice.
 
-![](/post/uploads/2020-1-how-to-create-and-publish-your-first-configurable-ruby-gem/1.png)
+![](/uploads/2020-1-how-to-create-and-publish-your-first-configurable-ruby-gem/1.png)
 
 The next step is to open the project in your code editor and make your changes
 to the *your-gem-name.gemspec* file. I’ve configured mine like so:
 
-![](/post/uploads/2020-1-how-to-create-and-publish-your-first-configurable-ruby-gem/2.png)
+![](/uploads/2020-1-how-to-create-and-publish-your-first-configurable-ruby-gem/2.png)
 
 ### Step 3: Making your Ruby Gem configurable
 
 Since one of our goals is to make our gem configurable, these are the settings
 that we’ll make available:
 
-```
-**base_url →** Base URL of Trio's website
-**post_page_path →** Post page path URL that contains the last post
-**post_selector →** CSS selector of the post wrapper element
-**title_selector →** CSS selector of the post title element
-**thumbnail_image_url_selector →** CSS selector of the post thumbnail image element
-**post_url_selector →** CSS selector of the post link element
-**author_name_selector →** CSS selector of the post author name element
-**author_avatar_image_url_selector →** CSS selector of the post author avatar element
-```
+| Option                               | Description                                      |
+| ------------------------------------ | ------------------------------------------------ |
+| **base_url**                         | Base URL of Trio's website                       |
+| **post_page_path**                   | Post page path URL that contains the last post   |
+| **post_selector**                    | CSS selector of the post wrapper element         |
+| **title_selector**                   | CSS selector of the post title element           |
+| **thumbnail_image_url_selector**     | CSS selector of the post thumbnail image element |
+| **post_url_selector**                | CSS selector of the post link element            |
+| **author_name_selector**             | CSS selector of the post author name element     |
+| **author_avatar_image_url_selector** | CSS selector of the post author avatar element   |
 
 To make that happen we’re going to create the config file
 **lib/trio/blog/api/config.rb**
 
-![](/post/uploads/2020-1-how-to-create-and-publish-your-first-configurable-ruby-gem/3.png)
+![](/uploads/2020-1-how-to-create-and-publish-your-first-configurable-ruby-gem/3.png)
 
 The *confib.rb* file just contains a class with some attributes of readers and
 writers. In order to make use of these changes, we must also make some changes
 in our main library module:
 
-![](/post/uploads/2020-1-how-to-create-and-publish-your-first-configurable-ruby-gem/4.png)
+![](/uploads/2020-1-how-to-create-and-publish-your-first-configurable-ruby-gem/4.png)
 
 This way we’re able to configure our library like this:
 
-![](/post/uploads/2020-1-how-to-create-and-publish-your-first-configurable-ruby-gem/5.png)
+![](/uploads/2020-1-how-to-create-and-publish-your-first-configurable-ruby-gem/5.png)
 
 Pretty cool, right? In order to make a real stable version of this library, I’ve
 implemented the code to fetch the last request as simple as possible. You can
@@ -120,15 +119,15 @@ release our beta version v0.1.0.
 
 Let’s make sure that our Version constant has the right value:
 
-![](/post/uploads/2020-1-how-to-create-and-publish-your-first-configurable-ruby-gem/6.png)
+![](/uploads/2020-1-how-to-create-and-publish-your-first-configurable-ruby-gem/6.png)
 
 Next, we create a git tag about this release version:
 
-![](/post/uploads/2020-1-how-to-create-and-publish-your-first-configurable-ruby-gem/7.png)
+![](/uploads/2020-1-how-to-create-and-publish-your-first-configurable-ruby-gem/7.png)
 
 … and finally push it to the remote repository:
 
-![](/post/uploads/2020-1-how-to-create-and-publish-your-first-configurable-ruby-gem/8.png)
+![](/uploads/2020-1-how-to-create-and-publish-your-first-configurable-ruby-gem/8.png)
 
 Congratulations! You just created your first configurable Ruby Gem. For now, you
 can't install it using [rubygems.org](https://rubygems.org), but you can install
@@ -143,12 +142,12 @@ Now we can make our gem available on [rubygems.org](https://rubygems.org).
 
 We can create a deployable package by using this command:
 
-![](/post/uploads/2020-1-how-to-create-and-publish-your-first-configurable-ruby-gem/9.png)
+![](/uploads/2020-1-how-to-create-and-publish-your-first-configurable-ruby-gem/9.png)
 
 That command generated a file called *trio-blog-api-0.1.0.gem* and now we can
 push it to the [rubygems](https://rubygems.org) by using the following command:
 
-![](/post/uploads/2020-1-how-to-create-and-publish-your-first-configurable-ruby-gem/10.png)
+![](/uploads/2020-1-how-to-create-and-publish-your-first-configurable-ruby-gem/10.png)
 
 If this is your first push you’ll be asked about your credentials at[
 rubygems.org](https://rubygems.org). You can create an account there if you
@@ -164,10 +163,12 @@ by using just:
 gem install trio-blog-api
 ```
 
-![](/post/uploads/2020-1-how-to-create-and-publish-your-first-configurable-ruby-gem/11.gif)
+![](/uploads/2020-1-how-to-create-and-publish-your-first-configurable-ruby-gem/11.gif)
 
 *****
 
 I hope this brief post helps you to release your contribution to the world :)
 
 Feel free to ask me if you have any questions.
+
+*Originally published in [https://trio.dev/blog/how-to-create-and-publish-your-first-configurable-ruby-gem-37189](https://trio.dev/blog/how-to-create-and-publish-your-first-configurable-ruby-gem-37189)*
